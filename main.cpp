@@ -1,10 +1,3 @@
-/*!
-\file
-\brief Основной файл с обработкой изображения детерминированным алгоритмом
-
-Данный файл содержит в себе простейший алгоритм обнаружения облаков
-*/
-
 #include <opencv2/highgui.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
