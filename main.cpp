@@ -76,7 +76,16 @@ int main( int argc, char** argv )
 			int columnSize = j * squareSize;
 
 			if (i == 0) {
-				rowSize -= of
+				rowSize -= OFFSET_BETWEEN_SQURES;
+			}
+			if (j == 0) {
+				columnSize -= OFFSET_BETWEEN_SQURES;
+			}
+			if (i === 0) {
+				rowSize -= OFFSET_BETWEEN_SQURES;
+			}
+			if (j == 0) {
+				columnSize -= OFFSET_BETWEEN_SQURES;
 			}
 
             cv::Rect roi(j * squareSize, i * squareSize, squareSize, squareSize);
