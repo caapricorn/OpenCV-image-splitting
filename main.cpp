@@ -8,7 +8,7 @@
 #include <fstream>
 #include <iostream>
 
-#define OFFSET_BETWEEN_SQURES 64
+#define OFFSET_BETWEEN_SQURES 
 
 int main( int argc, char** argv )
 {
@@ -76,12 +76,6 @@ int main( int argc, char** argv )
 			int columnSize = j * squareSize;
 
 			if (i == 0) {
-				rowSize -= OFFSET_BETWEEN_SQURES;
-			}
-			if (j == 0) {
-				columnSize -= OFFSET_BETWEEN_SQURES;
-			}
-			if (i === 0) {
 				rowSize -= OFFSET_BETWEEN_SQURES;
 			}
 			if (j == 0) {
