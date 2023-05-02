@@ -82,7 +82,7 @@ int main( int argc, char** argv )
 				columnSize -= OFFSET_BETWEEN_SQURES;
 			}
 			
-			std::cout << i << j << rowSize << columnSize << std:en
+			std::cout << i << j << rowSize << columnSize << std::endl;
 
             cv::Rect roi(columnSize, rowSize, squareSize, squareSize);
 
