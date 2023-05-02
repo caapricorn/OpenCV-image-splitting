@@ -71,7 +71,8 @@ int main( int argc, char** argv )
 
 	if (newSizeWidth > dst.rows) {
 		right = newSizeWidth - dst.rows;
-		borderType = BORDER_CONSTANT;
+		borderType = cv::BORDER_CONSTANT;
+		cv::copyMakeBorder(dst, dst, 0, 0, 0, right, borderType, value);
 	}
 
 	// Loop over the rows and columns
