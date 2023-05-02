@@ -70,7 +70,8 @@ int main( int argc, char** argv )
 	int newSizeHeight = (squareSize - OFFSET_BETWEEN_SQURES) * cols + OFFSET_BETWEEN_SQURES;
 
 	if (newSizeWidth > dst.rows) {
-		
+		right = newSizeWidth - dst.rows;
+		borderType = 
 	}
 
 	// Loop over the rows and columns
