@@ -66,12 +66,10 @@ int main( int argc, char** argv )
     int rows = dst.rows / squareSize;
     int cols = dst.cols / squareSize;
 
-	int currentSize = 0
-
 	// Loop over the rows and columns
-    for (int i = 0; i < rows; i++)
+    for (int currentRow = 0; i < dst.rows; i += squareSize)
     {
-        for (int j = 0; j < cols; j++)
+        for (int currentCol = 0; j < dst.cols; i += squareSize)
         {
             // Define the region of interest
 			int rowSize = i * squareSize;
