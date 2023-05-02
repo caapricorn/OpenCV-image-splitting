@@ -51,7 +51,7 @@ int main( int argc, char** argv )
 	//int borderType = cv::BORDER_REPLICATE;
 
 	// Define the border value
-    cv::Scalar value(255, 255, 255);
+    cv::Scalar value(0, 0, 0);
 
 	// Create a new image with the border
     cv::Mat dst;
@@ -61,21 +61,6 @@ int main( int argc, char** argv )
 
 	// Define the size of the squares
     int squareSize = 200;
-
-	// Define the number of rows and columns
-    // int rows = dst.rows / squareSize;
-    // int cols = dst.cols / squareSize;
-
-	// int newSizeWidth = (squareSize - OFFSET_BETWEEN_SQURES) * rows + OFFSET_BETWEEN_SQURES;
-	// std::cout << "-------------" << rows << newSizeWidth << std::endl;
-
-	// int newSizeHeight = (squareSize - OFFSET_BETWEEN_SQURES) * cols + OFFSET_BETWEEN_SQURES;
-
-	// if (newSizeWidth > dst.rows) {
-	// 	right = newSizeWidth - dst.rows;
-	// 	borderType = cv::BORDER_CONSTANT;
-	// 	cv::copyMakeBorder(dst, dst, 0, 0, 0, right, borderType, value);
-	// }
 
 	int ir = dst.rows;
 	int cr = dst.cols;
@@ -112,43 +97,3 @@ int main( int argc, char** argv )
 
     return 0;
 }
-
-/*void thresh_callback(cv::Mat img)
-{
-	cv::Mat canny_output;
-    cv::Canny(closed, canny_output, thresh, thresh*2);
-    std::vector<std::vector<cv::Point> > contours;
-    findContours(canny_output, contours, cv::RETR_CCOMP, cv::ContourApproximationModes::CHAIN_APPROX_SIMPLE);
-
-	std::vector<cv::Point> main_contour;
-	
-	std::vector<cv::Point> hull;
-	for (size_t i = 0; i < contours.size(); i++)
-		main_contour.insert(main_contour.end(), contours[i].begin(), contours[i].end());
-
-
-	cv::convexHull(main_contour, hull);
-	cv::RotatedRect minRect;
-	minRect = cv::minAreaRect(hull);
-	
-	cv::Point2f rect_points[4];
-	minRect.points(rect_points);
-	for (int j = 0; j < 4; j++)
-		cv::line(img, rect_points[j], rect_points[(j + 1) % 4], cv::Scalar(255, 255, 255));
-
-	cv::Mat M, rotated, cropped;
-	float angle = minRect.angle;
-	cv::Size rect_size = minRect.size;
-	if (minRect.angle < -45.) {
-		angle += 90.0;
-		cv::swap(rect_size.width, rect_size.height);
-	} 
-	M = cv::getRotationMatrix2D(minRect.center, angle, 1.0);
-
-	cv::warpAffine(img, rotated, M, img.size(), cv::INTER_CUBIC);
-	//imwrite("rotate.jpg", rotated);
-	cv::getRectSubPix(rotated, rect_size, minRect.center, cropped);
-	//imwrite("crop.jpg", cropped);
-
-	//imwrite("cloud_contour.jpg",  img);
-}*/
