@@ -48,6 +48,15 @@ int main( int argc, char** argv )
 	// Вывод размеров изображения
     std::cout << "Ширина: " << image.cols << " Высота: " << image.rows << std::endl;
 
+	// Define the border size
+    int top = 10, bottom = 10, left = 10, right = 10;
+
+	// Define the border type
+    int borderType = cv::BORDER_CONSTANT;
+
+	// Define the border value
+    Scalar value(255, 255, 255);
+
     return 0;
 }
 
