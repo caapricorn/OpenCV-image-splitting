@@ -63,10 +63,12 @@ int main( int argc, char** argv )
     int squareSize = 200;
 
 	// Define the number of rows and columns
-    int rows = src.rows / squareSize;
-    int cols = src.cols / squareSize;
+    int rows = dst.rows / squareSize;
+    int cols = dst.cols / squareSize;
 
 	int newSizeWidth = (squareSize - OFFSET_BETWEEN_SQURES) * rows + OFFSET_BETWEEN_SQURES;
+	
+
 	int newSizeHeight = (squareSize - OFFSET_BETWEEN_SQURES) * cols + OFFSET_BETWEEN_SQURES;
 
 	if (newSizeWidth > dst.rows) {
