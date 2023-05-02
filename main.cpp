@@ -67,17 +67,18 @@ int main( int argc, char** argv )
     int cols = dst.cols / squareSize;
 
 	// Loop over the rows and columns
-    for (int currentRow = 0; currentRow < dst.rows; currentRow += squareSize)
+    for (int currentRow = 0; currentRow <= dst.rows; currentRow += squareSize)
     {
-        for (int currentCol = 0; currentCol < dst.cols; currentCol += squareSize)
+        for (int currentCol = 0; currentCol <= dst.cols; currentCol += squareSize)
         {
 			if (currentCol != 0) {
 				currentCol -= OFFSET_BETWEEN_SQURES;
 			}
+			if (currentCol )
 			
-			std::cout << i << j << rowSize << columnSize << std::endl;
+			// std::cout << i << j << rowSize << columnSize << std::endl;
 
-            cv::Rect roi(columnSize, rowSize, squareSize, squareSize);
+            cv::Rect roi(currentCol, currentRow, squareSize, squareSize);
 
             // Extract the square from the image
             cv::Mat square = dst(roi);
