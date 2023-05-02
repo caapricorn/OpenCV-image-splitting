@@ -67,19 +67,12 @@ int main( int argc, char** argv )
     int cols = dst.cols / squareSize;
 
 	// Loop over the rows and columns
-    for (int currentRow = 0; i < dst.rows; i += squareSize)
+    for (int currentRow = 0; currentRow < dst.rows; currentRow += squareSize)
     {
-        for (int currentCol = 0; j < dst.cols; i += squareSize)
+        for (int currentCol = 0; currentCol < dst.cols; currentCol += squareSize)
         {
-            // Define the region of interest
-			int rowSize = i * squareSize;
-			int columnSize = j * squareSize;
-
-			// if (i != 0) {
-			// 	rowSize -= OFFSET_BETWEEN_SQURES;
-			// }
-			if (j != 0) {
-				columnSize -= j * OFFSET_BETWEEN_SQURES;
+			if (currentCol != 0) {
+				currentCol -= OFFSET_BETWEEN_SQURES;
 			}
 			
 			std::cout << i << j << rowSize << columnSize << std::endl;
@@ -91,7 +84,7 @@ int main( int argc, char** argv )
 
             // Do something with the square, for example display it
 			char name[80];
-			sprintf(name, "square%d-%d.bmp", i, j);
+			sprintf(name, "square%d-%d.bmp", currentRow / squareSize, currentCol / squareSize);
             imwrite(name, square);
         }
     }
