@@ -20,6 +20,12 @@ int main( int argc, char** argv )
 	// Получение размера файла
 	file.seekg(0, std::ios::end);
 	int length = file.tellg();
+	file.seekg(0, std::ios::beg);
+
+	// Выделение памяти для чтения изображения
+	char* buffer = new char[length];
+	file.read(buffer, length);
+
 	
 
 
