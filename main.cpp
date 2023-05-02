@@ -15,7 +15,7 @@ void thresh_callback(cv::Mat);
 int main( int argc, char** argv )
 {
     cv::Mat img;
-    img = cv::imread("cloud.png",cv::IMREAD_COLOR);
+    img = cv::imread("Mandrill.bmp",cv::IMREAD_COLOR);
     if(! img.data)
         {
             std::cout<<"Could not open file" << std::endl;
