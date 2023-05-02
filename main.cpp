@@ -71,7 +71,7 @@ int main( int argc, char** argv )
 
 	if (newSizeWidth > dst.rows) {
 		right = newSizeWidth - dst.rows;
-		borderType = 
+		borderType = BORDER_CONSTANT;
 	}
 
 	// Loop over the rows and columns
