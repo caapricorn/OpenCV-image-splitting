@@ -69,7 +69,24 @@ int main( int argc, char** argv )
 
 	// Define the number of rows and columns
     int rows = dst.rows / squareSize;
-    int cols = src.cols / squareSize;
+    int cols = dst.cols / squareSize;
+
+	// Loop over the rows and columns
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            // Define the region of interest
+            cv::Rect roi(j * squareSize, i * squareSize, squareSize, squareSize);
+
+            // Extract the square from the image
+            cv::Mat square = dst(roi);
+
+            // Do something with the square, for example display it
+            imshow("Square", square);
+            waitKey(0);
+        }
+    }
 
     return 0;
 }
