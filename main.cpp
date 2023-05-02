@@ -62,10 +62,6 @@ int main( int argc, char** argv )
 	// Define the size of the squares
     int squareSize = 200;
 
-	// Define the number of rows and columns
-    int rows = dst.rows / squareSize;
-    int cols = dst.cols / squareSize;
-
 	// Loop over the rows and columns
     for (int currentRow = 0; currentRow <= dst.rows; currentRow += squareSize)
     {
