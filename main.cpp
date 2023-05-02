@@ -67,7 +67,7 @@ int main( int argc, char** argv )
     int cols = dst.cols / squareSize;
 
 	int newSizeWidth = (squareSize - OFFSET_BETWEEN_SQURES) * rows + OFFSET_BETWEEN_SQURES;
-	std::cout << "-------------" << ronewSizeWidth << std::endl;
+	std::cout << "-------------" << rows << newSizeWidth << std::endl;
 
 	int newSizeHeight = (squareSize - OFFSET_BETWEEN_SQURES) * cols + OFFSET_BETWEEN_SQURES;
 
