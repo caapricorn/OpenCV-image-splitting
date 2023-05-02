@@ -76,7 +76,7 @@ int main( int argc, char** argv )
     {
         for (int j = 0; j < cols; j++)
         {
-			std::cout << i << j << rows << col
+			std::cout << i << j << rows << cols << squareSize << std::endl;
             // Define the region of interest
             cv::Rect roi(j * squareSize, i * squareSize, squareSize, squareSize);
 
@@ -87,7 +87,11 @@ int main( int argc, char** argv )
 			char name[80];
 			sprintf(name, "square%d-%d.bmp", i, j);
             imwrite(name, square);
+						std::cout << "1" << j << rows << cols << squareSize << std::endl;
+
             cv::waitKey(0);
+						std::cout << "2" << j << rows << cols << squareSize << std::endl;
+
         }
     }
 
