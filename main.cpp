@@ -8,7 +8,7 @@
 #include <fstream>
 #include <iostream>
 
-#define OFFSET_BETWEEN_SQURES 150
+#define OFFSET_BETWEEN_SQURES 25
 
 int main( int argc, char** argv )
 {
@@ -65,6 +65,8 @@ int main( int argc, char** argv )
 	// Define the number of rows and columns
     int rows = dst.rows / squareSize;
     int cols = dst.cols / squareSize;
+
+	int currentSize = 0
 
 	// Loop over the rows and columns
     for (int i = 0; i < rows; i++)
