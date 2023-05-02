@@ -72,7 +72,13 @@ int main( int argc, char** argv )
         for (int j = 0; j < cols; j++)
         {
             // Define the region of interest
-			const int rowSize = 
+			int rowSize = i * squareSize;
+			int columnSize = j * squareSize;
+
+			if (i == 0) {
+				rowSize -= of
+			}
+
             cv::Rect roi(j * squareSize, i * squareSize, squareSize, squareSize);
 
             // Extract the square from the image
