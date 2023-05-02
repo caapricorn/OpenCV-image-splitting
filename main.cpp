@@ -45,11 +45,11 @@ int main( int argc, char** argv )
 				resized.at<cv::Vec3b>(i, j)[1] = 0;
 				resized.at<cv::Vec3b>(i, j)[2] = 255;
 			}
-	imwrite("cloud_mask.jpg", resized);
+	//imwrite("cloud_mask.jpg", resized);
 
 	cv::cvtColor(resized, src_gray, cv::COLOR_BGR2GRAY);
 	cv::blur(src_gray, src_gray, cv::Size(3, 3));
-	imwrite("img_grey.jpg", src_gray);
+	//imwrite("img_grey.jpg", src_gray);
 
 	cv::Mat thresh_mat;
 	cv::threshold(src_gray, thresh_mat, 100, 255, cv::THRESH_BINARY);
@@ -58,7 +58,7 @@ int main( int argc, char** argv )
 	//cv::Mat closed;
 	cv::morphologyEx(thresh_mat, closed, cv::MORPH_CLOSE, kernel);
 	
-	imwrite("morph.jpg", closed);
+	//imwrite("morph.jpg", closed);
 	
 	thresh_callback(image);
 
@@ -98,9 +98,9 @@ void thresh_callback(cv::Mat img)
 	M = cv::getRotationMatrix2D(minRect.center, angle, 1.0);
 
 	cv::warpAffine(img, rotated, M, img.size(), cv::INTER_CUBIC);
-	imwrite("rotate.jpg", rotated);
+	//imwrite("rotate.jpg", rotated);
 	cv::getRectSubPix(rotated, rect_size, minRect.center, cropped);
-	imwrite("crop.jpg", cropped);
+	//imwrite("crop.jpg", cropped);
 
-	imwrite("cloud_contour.jpg",  img);
+	//imwrite("cloud_contour.jpg",  img);
 }
