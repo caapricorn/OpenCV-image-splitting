@@ -49,7 +49,7 @@ int main( int argc, char** argv )
     std::cout << "Ширина: " << image.cols << " Высота: " << image.rows << std::endl;
 
 	// Define the border size
-    int top = 10, bottom = 10, left = 10, right = 10;
+    int top = 128, bottom = 10, left = 10, right = 10;
 
 	// Define the border type
     int borderType = cv::BORDER_REPLICATE;
