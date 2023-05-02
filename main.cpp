@@ -69,7 +69,9 @@ int main( int argc, char** argv )
 	int newSizeWidth = (squareSize - OFFSET_BETWEEN_SQURES) * rows + OFFSET_BETWEEN_SQURES;
 	int newSizeHeight = (squareSize - OFFSET_BETWEEN_SQURES) * cols + OFFSET_BETWEEN_SQURES;
 
-	if (new)
+	if (newSizeWidth > dst.rows) {
+		
+	}
 
 	// Loop over the rows and columns
     for (int currentRow = 0; currentRow <= dst.rows; currentRow += squareSize)
