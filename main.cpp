@@ -32,8 +32,22 @@ int main( int argc, char** argv )
     file.close();
 
 	// Создание объекта Mat из бинарных данных
-    cv::Mat img = cv::imdecode(cv::Mat(1, length, cv::CV_8UC1, buffer), cv::IMREAD_UNCHANC);
-    img = cv::imread("Mandrill.bmp",cv::IMREAD_COLOR);
+    cv::Mat img = cv::imdecode(cv::Mat(1, length, cv::CV_8UC1, buffer), cv::IMREAD_UNCHANGED);
+
+	// Освобождение памяти
+    delete[] buffer;
+
+	// Проверка, удалось ли прочитать изображение
+    if (image.empty())
+    {
+        std::cout << "Не удалось прочитать изображение" << std::endl;
+        return -1;
+    }
+
+	// Вывод размеров изображения
+    std::cout << "Ширина: " << image.cols << " Высота: " << image.rows << std::endl;
+
+    /*img = cv::imread("Mandrill.bmp",cv::IMREAD_COLOR);
     if(! img.data)
         {
             std::cout<<"Could not open file" << std::endl;
@@ -78,7 +92,7 @@ int main( int argc, char** argv )
 	
 	//imwrite("morph.jpg", closed);
 	
-	thresh_callback(image);
+	thresh_callback(image);*/
 
     return 0;
 }
