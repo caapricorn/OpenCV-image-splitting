@@ -79,7 +79,7 @@ int main( int argc, char** argv )
 			// 	rowSize -= OFFSET_BETWEEN_SQURES;
 			// }
 			if (j != 0) {
-				columnSize -= OFFSET_BETWEEN_SQURES;
+				columnSize -= j * OFFSET_BETWEEN_SQURES;
 			}
 			
 			std::cout << i << j << rowSize << columnSize << std::endl;
