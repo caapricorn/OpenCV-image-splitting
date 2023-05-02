@@ -33,7 +33,7 @@ int main( int argc, char** argv )
     file.close();
 
 	// Создание объекта Mat из бинарных данных
-    cv::Mat image = cv::imdecode(cv::Mat(1, length, cv::CV_8UC1, buffer), cv::IMREAD_UNCHANGED);
+    cv::Mat image = imdecode(cv::Mat(1, length, CV_8UC1, buffer), IMREAD_UNCHANGED);
 
 	// Освобождение памяти
     delete[] buffer;
@@ -98,7 +98,7 @@ int main( int argc, char** argv )
     return 0;
 }
 
-void thresh_callback(cv::Mat img)
+/*void thresh_callback(cv::Mat img)
 {
 	cv::Mat canny_output;
     cv::Canny(closed, canny_output, thresh, thresh*2);
@@ -136,4 +136,4 @@ void thresh_callback(cv::Mat img)
 	//imwrite("crop.jpg", cropped);
 
 	//imwrite("cloud_contour.jpg",  img);
-}
+}*/
