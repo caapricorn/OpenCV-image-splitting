@@ -48,53 +48,6 @@ int main( int argc, char** argv )
 	// Вывод размеров изображения
     std::cout << "Ширина: " << image.cols << " Высота: " << image.rows << std::endl;
 
-    /*img = cv::imread("Mandrill.bmp",cv::IMREAD_COLOR);
-    if(! img.data)
-        {
-            std::cout<<"Could not open file" << std::endl;
-            return -1;
-        }  
-
-	int height = img.rows;
-	int width = img.cols;
-	int max_size = std::max(height, width);
-	cv::Mat square = cv::Mat::zeros(max_size, max_size, img.type());
-	int x = (max_size - width) / 2;
-    int y = (max_size - height) / 2;
-	img.copyTo(square(cv::Rect(x, y, width, height)));
-	cv::Mat resized;
-	cv::resize(square, resized, cv::Size(512, 512));
-	imwrite("resize.jpg", resized); 
-
-	cv::Mat image = resized.clone(); 
-
-	for (int i = 0; i < resized.rows; i++)
-		for (int j = 0; j < resized.cols; j++)
-			if (resized.at<cv::Vec3b>(i, j)[0] > 130 &&
-				resized.at<cv::Vec3b>(i, j)[2] > 130 && 
-				resized.at<cv::Vec3b>(i, j)[1] > 130)
-			{
-				resized.at<cv::Vec3b>(i, j)[0] = 0;
-				resized.at<cv::Vec3b>(i, j)[1] = 0;
-				resized.at<cv::Vec3b>(i, j)[2] = 255;
-			}
-	//imwrite("cloud_mask.jpg", resized);
-
-	cv::cvtColor(resized, src_gray, cv::COLOR_BGR2GRAY);
-	cv::blur(src_gray, src_gray, cv::Size(3, 3));
-	//imwrite("img_grey.jpg", src_gray);
-
-	cv::Mat thresh_mat;
-	cv::threshold(src_gray, thresh_mat, 100, 255, cv::THRESH_BINARY);
-
-	cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(5, 5));
-	//cv::Mat closed;
-	cv::morphologyEx(thresh_mat, closed, cv::MORPH_CLOSE, kernel);
-	
-	//imwrite("morph.jpg", closed);
-	
-	thresh_callback(image);*/
-
     return 0;
 }
 
