@@ -64,6 +64,13 @@ int main( int argc, char** argv )
 
 	imwrite("border.bmp", dst);
 
+	// Define the size of the squares
+    int squareSize = 50;
+
+	// Define the number of rows and columns
+    int rows = dst.rows / squareSize;
+    int cols = src.cols / squareSize;
+
     return 0;
 }
 
