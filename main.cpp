@@ -80,9 +80,9 @@ int main( int argc, char** argv )
 	int ir = dst.rows;
 	int cr = dst.cols;
 	// Loop over the rows and columns
-    for (int currentRow = 0; currentRow <= ir; currentRow += squareSize)
+    for (int currentRow = 0; currentRow < ir; currentRow += squareSize)
     {
-        for (int currentCol = 0; currentCol <= cr; currentCol += squareSize)
+        for (int currentCol = 0; currentCol < cr; currentCol += squareSize)
         {
 			if (currentCol != 0) {
 				currentCol -= OFFSET_BETWEEN_SQURES;
@@ -90,9 +90,9 @@ int main( int argc, char** argv )
 			if (currentCol + squareSize > cr) {
 				borderType = cv::BORDER_CONSTANT;
 				cv::copyMakeBorder(dst, dst, 0, 0, 0, squareSize, borderType, value);
-				imwrite("TEST.bmp", dst);
 			}
 			if (currentRow + squareSize > ir) {
+				borderType = cv::BORDER_CONSTANT;
 				cv::copyMakeBorder(dst, dst, 0, squareSize, 0, 0, borderType, value);
 			}
 			
