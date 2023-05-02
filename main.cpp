@@ -52,7 +52,7 @@ int main( int argc, char** argv )
     int top = 128, bottom = 128, left = 128, right = 128;
 
 	// Define the border type
-    int borderType = cv::BORDER_REPLICATE;
+    int borderType = cv::BORDER_REFLECT_101;
 
 	// Define the border value
     cv::Scalar value(255, 255, 255);
