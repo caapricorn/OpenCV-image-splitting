@@ -105,7 +105,7 @@ int main( int argc, char** argv )
 
             // Do something with the square, for example display it
 			char name[80];
-			sprintf(name, "square%d-%d.bmp", currentRow / squareSize, currentCol / squareSize);
+			sprintf(name, "square%d-%d.bmp", currentRow, currentCol);
             imwrite(name, square);
         }
     }
