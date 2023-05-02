@@ -32,7 +32,7 @@ int main( int argc, char** argv )
     file.close();
 
 	// Создание объекта Mat из бинарных данных
-    cv::Mat img = cv::imdecode(cv::Mat(1, length, cv::CV_8UC1, buffer), cv::IMREAD_UNCHANGED);
+    cv::Mat image = cv::imdecode(cv::Mat(1, length, cv::CV_8UC1, buffer), cv::IMREAD_UNCHANGED);
 
 	// Освобождение памяти
     delete[] buffer;
