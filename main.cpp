@@ -63,19 +63,19 @@ int main( int argc, char** argv )
     int squareSize = 200;
 
 	// Define the number of rows and columns
-    int rows = dst.rows / squareSize;
-    int cols = dst.cols / squareSize;
+    // int rows = dst.rows / squareSize;
+    // int cols = dst.cols / squareSize;
 
-	int newSizeWidth = (squareSize - OFFSET_BETWEEN_SQURES) * rows + OFFSET_BETWEEN_SQURES;
-	std::cout << "-------------" << rows << newSizeWidth << std::endl;
+	// int newSizeWidth = (squareSize - OFFSET_BETWEEN_SQURES) * rows + OFFSET_BETWEEN_SQURES;
+	// std::cout << "-------------" << rows << newSizeWidth << std::endl;
 
-	int newSizeHeight = (squareSize - OFFSET_BETWEEN_SQURES) * cols + OFFSET_BETWEEN_SQURES;
+	// int newSizeHeight = (squareSize - OFFSET_BETWEEN_SQURES) * cols + OFFSET_BETWEEN_SQURES;
 
-	if (newSizeWidth > dst.rows) {
-		right = newSizeWidth - dst.rows;
-		borderType = cv::BORDER_CONSTANT;
-		cv::copyMakeBorder(dst, dst, 0, 0, 0, right, borderType, value);
-	}
+	// if (newSizeWidth > dst.rows) {
+	// 	right = newSizeWidth - dst.rows;
+	// 	borderType = cv::BORDER_CONSTANT;
+	// 	cv::copyMakeBorder(dst, dst, 0, 0, 0, right, borderType, value);
+	// }
 
 	int ir = dst.rows;
 	int cr = dst.cols;
