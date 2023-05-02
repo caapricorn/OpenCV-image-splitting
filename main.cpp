@@ -14,8 +14,13 @@ void thresh_callback(cv::Mat);
 
 int main( int argc, char** argv )
 {
+	// Открытие файла в бинарном режиме
+	std::ifstream file("Mandrill.bmp", std::ios::binary);
 
-	std::ifstream file("Mandrill.bmp", std::ios::binary)
+	// Получение размера файла
+	file.seekg(0, std::ios::end);
+	int length = file.tellg();
+	
 
 
     cv::Mat img;
