@@ -14,6 +14,10 @@ void thresh_callback(cv::Mat);
 
 int main( int argc, char** argv )
 {
+
+	std::ifstream file("Mandrill.bmp", std::ios::binary)
+
+
     cv::Mat img;
     img = cv::imread("Mandrill.bmp",cv::IMREAD_COLOR);
     if(! img.data)
