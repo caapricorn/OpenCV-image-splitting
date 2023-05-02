@@ -72,7 +72,8 @@ int main( int argc, char** argv )
         for (int j = 0; j < cols; j++)
         {
             // Define the region of interest
-            cv::Rect roi(j * squareSize , i * squareSize, squareSize, squareSize);
+			const int rowSize = 
+            cv::Rect roi(j * squareSize, i * squareSize, squareSize, squareSize);
 
             // Extract the square from the image
             cv::Mat square = dst(roi);
