@@ -8,12 +8,7 @@
 #include <fstream>
 #include <iostream>
 
-cv::Mat src_gray;
-cv::Mat closed;
-int thresh = 40;
-cv::RNG rng(12345);
-
-void thresh_callback(cv::Mat);
+#define OFFSET_BETWEEN_SQURES 64
 
 int main( int argc, char** argv )
 {
@@ -77,7 +72,7 @@ int main( int argc, char** argv )
         for (int j = 0; j < cols; j++)
         {
             // Define the region of interest
-            cv::Rect roi(j * squareSize, i * squareSize, squareSize, squareSize);
+            cv::Rect roi(j * squareSize , i * squareSize, squareSize, squareSize);
 
             // Extract the square from the image
             cv::Mat square = dst(roi);
