@@ -77,6 +77,8 @@ int main( int argc, char** argv )
 		cv::copyMakeBorder(dst, dst, 0, 0, 0, right, borderType, value);
 	}
 
+	int ir = dst.rows;
+	int cr = dst.cols;
 	// Loop over the rows and columns
     for (int currentRow = 0; currentRow <= dst.rows; currentRow += squareSize)
     {
