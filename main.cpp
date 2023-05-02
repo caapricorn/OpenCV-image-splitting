@@ -66,7 +66,7 @@ int main( int argc, char** argv )
     int rows = src.rows / squareSize;
     int cols = src.cols / squareSize;
 
-	int newSize = ()
+	int newSizeWidth = (squareSize - OFFSET_BETWEEN_SQURES) * 
 
 	// Loop over the rows and columns
     for (int currentRow = 0; currentRow <= dst.rows; currentRow += squareSize)
