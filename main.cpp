@@ -68,7 +68,7 @@ int main( int argc, char** argv )
     int squareSize = 50;
 
 	// Define the number of rows and columns
-	std::cout << dst.rows << squareSize
+	std::cout << "=> Sizes =>" << dst.rows << ' ' << squareSize << std::endl;
     int rows = dst.rows / squareSize;
     int cols = dst.cols / squareSize;
 
