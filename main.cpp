@@ -62,6 +62,8 @@ int main( int argc, char** argv )
 	// Define the size of the squares
     int squareSize = 200;
 
+	int newSize = ()
+
 	// Loop over the rows and columns
     for (int currentRow = 0; currentRow <= dst.rows; currentRow += squareSize)
     {
