@@ -84,7 +84,7 @@ int main( int argc, char** argv )
 
             // Do something with the square, for example display it
 			char name[80];
-			sprintf(name, "square%d-%d.bmp", );
+			sprintf(name, "square%d-%d.bmp", i, j);
             imwrite(name, square);
             cv::waitKey(0);
         }
