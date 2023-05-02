@@ -83,8 +83,8 @@ int main( int argc, char** argv )
             cv::Mat square = dst(roi);
 
             // Do something with the square, for example display it
-			char str[80];
-			char name = "square" + i + j + ".bmp";
+			char name[80];
+			sprintf(name, "square%d-%d.bmp", );
             imwrite(name, square);
             cv::waitKey(0);
         }
