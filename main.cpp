@@ -76,6 +76,7 @@ int main( int argc, char** argv )
     {
         for (int j = 0; j < cols; j++)
         {
+			std::cout << i << j << rows << col
             // Define the region of interest
             cv::Rect roi(j * squareSize, i * squareSize, squareSize, squareSize);
 
