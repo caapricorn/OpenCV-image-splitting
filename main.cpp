@@ -8,7 +8,7 @@
 #include <fstream>
 #include <iostream>
 
-#define OFFSET_BETWEEN_SQURES 
+#define OFFSET_BETWEEN_SQURES 100
 
 int main( int argc, char** argv )
 {
@@ -60,7 +60,7 @@ int main( int argc, char** argv )
 	imwrite("border.bmp", dst);
 
 	// Define the size of the squares
-    int squareSize = 50;
+    int squareSize = 200;
 
 	// Define the number of rows and columns
     int rows = dst.rows / squareSize;
