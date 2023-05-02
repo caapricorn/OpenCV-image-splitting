@@ -25,7 +25,7 @@ int main( int argc, char** argv )
     img = cv::imread("cloud.png",cv::IMREAD_COLOR);
     if(! img.data)
         {
-            std::cout<<"Could not open file" << std::endl;
+            std::cout<<"Could not open the file" << std::endl;
             return -1;
         }  
 
