@@ -67,7 +67,7 @@ int main( int argc, char** argv )
     int cols = dst.cols / squareSize;
 
 	// Loop over the rows and columns
-    for (int i = 0; i < rows; i++)
+    for (int i = 0; i < rows - 1; i++)
     {
         for (int j = 0; j < cols; j++)
         {
@@ -82,7 +82,7 @@ int main( int argc, char** argv )
 				columnSize -= OFFSET_BETWEEN_SQURES;
 			}
 
-            cv::Rect roi(j * squareSize, i * squareSize, squareSize, squareSize);
+            cv::Rect roi(columnSize, rowSize, squareSize, squareSize);
 
             // Extract the square from the image
             cv::Mat square = dst(roi);
