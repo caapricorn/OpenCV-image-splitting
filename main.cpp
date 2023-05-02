@@ -4,7 +4,7 @@
 #include <opencv2/imgproc/imgproc_c.h>
 #include <opencv2/core/types_c.h>
 #include <opencv2/opencv.hpp>
-#include <fs
+#include <fstream>
 #include <iostream>
 
 cv::Mat src_gray;
@@ -32,7 +32,7 @@ int main( int argc, char** argv )
     file.close();
 
 	// Создание объекта Mat из бинарных данных
-    cv::Mat img = cv::imd;
+    cv::Mat img = cv::imdecode(cv::Mat(1, length, cv::CV_8UC1, buffer), cv::IMREAD_UNCHANC);
     img = cv::imread("Mandrill.bmp",cv::IMREAD_COLOR);
     if(! img.data)
         {
