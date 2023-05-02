@@ -5,11 +5,11 @@
 Данный файл содержит в себе простейший алгоритм обнаружения облаков
 */
 
-#include </usr/local/include/opencv4/opencv2/highgui.hpp>
-#include "/usr/local/include/opencv4/opencv2/core/core.hpp"
-#include </usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp>
-#include </usr/local/include/opencv4/opencv2/imgproc/imgproc_c.h>
-#include </usr/local/include/opencv4/opencv2/core/types_c.h>
+#include <opencv2/highgui.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/imgproc/imgproc_c.h>
+#include <opencv2/core/types_c.h>
 #include <iostream>
 
 cv::Mat src_gray;
