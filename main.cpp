@@ -74,7 +74,12 @@ int main( int argc, char** argv )
 			if (currentCol != 0) {
 				currentCol -= OFFSET_BETWEEN_SQURES;
 			}
-			if (currentCol )
+			if (currentCol + squareSize > dst.cols) {
+				continue;
+			}
+			if (currentRow + squareSize > dst.rows) {
+				continue;
+			}
 			
 			// std::cout << i << j << rowSize << columnSize << std::endl;
 
