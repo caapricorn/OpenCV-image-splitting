@@ -83,8 +83,8 @@ int main( int argc, char** argv )
             cv::Mat square = dst(roi);
 
             // Do something with the square, for example display it
-            imshow("Square", square);
-            waitKey(0);
+            imwrite("Square" + i + j, square);
+            //waitKey(0);
         }
     }
 
