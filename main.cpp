@@ -87,10 +87,10 @@ int main( int argc, char** argv )
 			if (currentCol != 0) {
 				currentCol -= OFFSET_BETWEEN_SQURES;
 			}
-			if (currentCol + squareSize > dst.cols) {
+			if (currentCol + squareSize > cr) {
 				cv::copyMakeBorder(dst, dst, 0, 0, 0, squareSize, borderType, value);
 			}
-			if (currentRow + squareSize > dst.rows) {
+			if (currentRow + squareSize > ir) {
 				cv::copyMakeBorder(dst, dst, 0, squareSize, 0, 0, borderType, value);
 			}
 			
