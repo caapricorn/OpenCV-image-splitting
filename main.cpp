@@ -62,6 +62,10 @@ int main( int argc, char** argv )
 	// Define the size of the squares
     int squareSize = 200;
 
+	// Define the number of rows and columns
+    int rows = src.rows / squareSize;
+    int cols = src.cols / squareSize;
+
 	int newSize = ()
 
 	// Loop over the rows and columns
