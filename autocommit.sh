@@ -1,5 +1,5 @@
 while :; do
-    sleep 5
+    sleep 60
     git checkout auto
     git fetch origin
     git pull
