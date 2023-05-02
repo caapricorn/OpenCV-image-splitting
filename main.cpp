@@ -61,7 +61,7 @@ int main( int argc, char** argv )
     cv::Mat dst;
     cv::copyMakeBorder(image, dst, top, bottom, left, right, borderType, value);
 
-	imwrite("")
+	//imwrite("border.bmp", dst);
 
     return 0;
 }
