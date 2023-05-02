@@ -55,7 +55,13 @@ int main( int argc, char** argv )
     int borderType = cv::BORDER_CONSTANT;
 
 	// Define the border value
-    Scalar value(255, 255, 255);
+    cv::Scalar value(255, 255, 255);
+
+	// Create a new image with the border
+    cv::Mat dst;
+    cv::copyMakeBorder(image, dst, top, bottom, left, right, borderType, value);
+
+	imwrite("")
 
     return 0;
 }
