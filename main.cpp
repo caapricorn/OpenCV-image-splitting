@@ -86,10 +86,10 @@ int main( int argc, char** argv )
 				currentCol -= OFFSET_BETWEEN_SQURES;
 			}
 			if (currentCol + squareSize > dst.cols) {
-				continue;
+				v::copyMakeBorder(dst, dst, 0, 0, 0, right, borderType, value);
 			}
 			if (currentRow + squareSize > dst.rows) {
-				continue;
+				v::copyMakeBorder(dst, dst, 0, 0, 0, right, borderType, value);
 			}
 			
 			// std::cout << i << j << rowSize << columnSize << std::endl;
