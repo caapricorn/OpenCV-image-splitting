@@ -94,6 +94,7 @@ int main( int argc, char** argv )
 			if (currentCol != 0) {
 				currentCol -= OFFSET_BETWEEN_SQURES;
 			}
+			if (currentCol + squareSize > cr )
 			if (currentCol + squareSize > cr) {
 
 				cv::Rect roi(currentCol, currentRow, cr - currentCol, squareSize);
