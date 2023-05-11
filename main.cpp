@@ -95,7 +95,7 @@ int main( int argc, char** argv )
 				currentCol -= OFFSET_BETWEEN_SQURES;
 			}
 			if (currentCol + squareSize > cr) {
-
+				
 				cv::Rect roi(currentCol, currentRow, cr - currentCol, squareSize);
 				cv::Mat square = dst(roi);
 				borderType = cv::BORDER_CONSTANT;
@@ -103,7 +103,7 @@ int main( int argc, char** argv )
 				std::cout << "удалось1" << currentRow << currentCol << std::endl;
 
 				char name[50];
-				sprintf(name, "square%d-%d.bmp", currentRow, currentCol);
+				sprintf(name, "Square%d-%d.bmp", currentRow, currentCol);
             	imwrite(name, square);
 
 				square.release();
