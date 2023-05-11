@@ -61,6 +61,8 @@ int main( int argc, char** argv )
 	// Вывод размеров изображения
     std::cout << "Ширина: " << image.cols << " Высота: " << image.rows << std::endl;
 
+	imwrite("test.bmp", image);
+
 	// Define the border size
     int top = 128, bottom = 128, left = 128, right = 128;
 
