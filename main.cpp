@@ -78,16 +78,16 @@ int main( int argc, char** argv )
 			if (currentCol != 0) {
 				currentCol -= OFFSET_BETWEEN_SQURES;
 			}
+			//Изображение с недостающими пикселями обрабатывается отдельно
 			if (currentCol + squareSize > cr && currentRow + squareSize > ir) {
 				cv::Rect roi(currentCol, currentRow, cr - currentCol, ir - currentRow);
 				cv::Mat square = dst(roi);
 				borderType = cv::BORDER_CONSTANT;
 				cv::copyMakeBorder(square, square, 0, squareSize - (ir - currentRow), 0, squareSize - (cr - currentCol), borderType, value);
 				char name[50];
-				sprintf(name, "SQuare%d-%d.bmp", currentRow, currentCol);
+				sprintf(name, "square%d-%d.bmp", currentRow, currentCol);
             	imwrite(name, square);
 				square.release();
-				std::cout << "удалось12 " << currentRow << currentCol << std::endl;
 				continue;
 			} else if (currentCol + squareSize > cr) {
 
@@ -96,19 +96,17 @@ int main( int argc, char** argv )
 				borderType = cv::BORDER_CONSTANT;
 				cv::copyMakeBorder(square, square, 0, 0, 0, squareSize - (cr - currentCol), borderType, value);
 				char name[50];
-				sprintf(name, "Square%d-%d.bmp", currentRow, currentCol);
+				sprintf(name, "square%d-%d.bmp", currentRow, currentCol);
             	imwrite(name, square);
 				square.release();
-				std::cout << "удалось1" << currentRow << currentCol << std::endl;
 				continue;
 			} else if (currentRow + squareSize > ir) {
 				cv::Rect roi(currentCol, currentRow, squareSize, ir - currentRow);
 				cv::Mat square = dst(roi);
 				borderType = cv::BORDER_CONSTANT;
 				cv::copyMakeBorder(square, square, 0, squareSize - (ir - currentRow), 0, 0, borderType, value);
-				std::cout << "удалось2" << currentRow << currentCol << std::endl;
 				char name[50];
-				sprintf(name, "sQuare%d-%d.bmp", currentRow, currentCol);
+				sprintf(name, "square%d-%d.bmp", currentRow, currentCol);
             	imwrite(name, square);
 				square.release();
 				continue;
