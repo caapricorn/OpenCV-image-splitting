@@ -23,6 +23,8 @@ int main( int argc, char** argv )
 
 	cv::Mat image(height, width, CV_8UC3);
 
+
+	//
 	for (int i = 0; i < height; i++) {
 		char* row = (char*)image.ptr(i);
 		file.read(row, width * 3);
