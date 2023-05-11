@@ -96,7 +96,7 @@ int main( int argc, char** argv )
 			}
 			if (currentCol + squareSize > cr) {
 
-				/*cv::Rect roi(currentCol, currentRow, cr - currentCol, squareSize);
+				cv::Rect roi(currentCol, currentRow, cr - currentCol, squareSize);
 				cv::Mat square = dst(roi);
 				borderType = cv::BORDER_CONSTANT;
 				cv::copyMakeBorder(square, square, 0, 0, 0, squareSize - (cr - currentCol), borderType, value);
@@ -106,10 +106,10 @@ int main( int argc, char** argv )
 				sprintf(name, "square%d-%d.bmp", currentRow, currentCol);
             	imwrite(name, square);
 
-				square.release();*/
+				square.release();
 
-				borderType = cv::BORDER_CONSTANT;
-				cv::copyMakeBorder(dst, dst, 0, 0, 0, squareSize, borderType, value);
+				//borderType = cv::BORDER_CONSTANT;
+				//cv::copyMakeBorder(dst, dst, 0, 0, 0, squareSize, borderType, value);
 			}
 			if (currentRow + squareSize > ir) {
 				borderType = cv::BORDER_CONSTANT;
