@@ -116,8 +116,8 @@ int main( int argc, char** argv )
 				cv::Rect roi(currentCol, currentRow, ir - currentRow, squareSize);
 				cv::Mat square = dst(roi);
 				borderType = cv::BORDER_CONSTANT;
-				cv::copyMakeBorder(square, square, 0, 0, 0, squareSize - (cr - currentCol), borderType, value);
-				std::cout << "удалось1" << currentRow << currentCol << std::endl;
+				cv::copyMakeBorder(square, square, 0, squareSize - (ir - currentRow), 0, 0, borderType, value);
+				std::cout << "удалось2" << currentRow << currentCol << std::endl;
 
 				char name[50];
 				sprintf(name, "Square%d-%d.bmp", currentRow, currentCol);
