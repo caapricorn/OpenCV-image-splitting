@@ -75,7 +75,9 @@ int main( int argc, char** argv )
     cv::Mat dst;
     cv::copyMakeBorder(image, dst, top, bottom, left, right, borderType, value);
 
-	imwrite("border.bmp", dst);
+	image.release();
+	
+	//imwrite("border.bmp", dst);
 
 	// Define the size of the squares
     int squareSize = 200;
