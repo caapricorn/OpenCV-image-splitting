@@ -112,6 +112,7 @@ int main( int argc, char** argv )
 			char name[80];
 			sprintf(name, "square%d-%d.bmp", currentRow, currentCol);
             imwrite(name, square);
+			square.release();
         }
     }
 
