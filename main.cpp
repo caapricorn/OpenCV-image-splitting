@@ -119,7 +119,7 @@ int main( int argc, char** argv )
 				std::cout << "удалось2" << currentRow << currentCol << std::endl;
 
 				char name[50];
-				sprintf(name, "Square%d-%d.bmp", currentRow, currentCol);
+				sprintf(name, "sQuare%d-%d.bmp", currentRow, currentCol);
             	imwrite(name, square);
 
 				square.release();
