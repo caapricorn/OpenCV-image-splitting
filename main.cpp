@@ -134,7 +134,7 @@ int main( int argc, char** argv )
 
             // Extract the square from the image
             cv::Mat square = dst(roi);
-
+			//std::cout << "удалось3" << std::endl;
 			std::cout << currentRow << " " << currentCol << std::endl;
 
             // Do something with the square, for example display it
