@@ -24,7 +24,7 @@ int main( int argc, char** argv )
 	cv::Mat image(height, width, CV_8UC3);
 
 
-	//
+	//Считывание изображения построчно
 	for (int i = 0; i < height; i++) {
 		char* row = (char*)image.ptr(i);
 		file.read(row, width * 3);
@@ -35,24 +35,6 @@ int main( int argc, char** argv )
 
 	file.close();
 
-	// Получение размера файла
-	//file.seekg(0, std::ios::end);
-	//int length = file.tellg();
-	//file.seekg(0, std::ios::beg);
-
-	// Выделение памяти для чтения изображения
-	//char* buffer = new char[length];
-	//file.read(buffer, length);
-
-	// Закрытие файла
-    //file.close();
-
-	// Создание объекта Mat из бинарных данных
-    //cv::Mat image = imdecode(cv::Mat(1, length, CV_8UC1, buffer), cv::IMREAD_UNCHANGED);
-
-	// Освобождение памяти
-    //delete[] buffer;
-
 	// Проверка, удалось ли прочитать изображение
     if (image.empty())
     {
@@ -62,8 +44,6 @@ int main( int argc, char** argv )
 
 	// Вывод размеров изображения
     std::cout << "Ширина: " << image.cols << " Высота: " << image.rows << std::endl;
-
-	//imwrite("test.bmp", image);
 
 	// Define the border size
     int top = 128, bottom = 128, left = 128, right = 128;
