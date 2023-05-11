@@ -94,7 +94,9 @@ int main( int argc, char** argv )
 			if (currentCol != 0) {
 				currentCol -= OFFSET_BETWEEN_SQURES;
 			}
-			if (currentCol + squareSize > cr )
+			if (currentCol + squareSize > cr && currentRow + squareSize > ir) {
+
+			}
 			if (currentCol + squareSize > cr) {
 
 				cv::Rect roi(currentCol, currentRow, cr - currentCol, squareSize);
@@ -113,7 +115,7 @@ int main( int argc, char** argv )
 			}
 			if (currentRow + squareSize > ir) {
 
-				cv::Rect roi(currentCol, currentRow, ir - currentRow, squareSize);
+				cv::Rect roi(currentCol, currentRow, squareSize, squareSize);
 				cv::Mat square = dst(roi);
 				borderType = cv::BORDER_CONSTANT;
 				cv::copyMakeBorder(square, square, 0, squareSize - (ir - currentRow), 0, 0, borderType, value);
