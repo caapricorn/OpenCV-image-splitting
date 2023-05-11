@@ -136,6 +136,8 @@ int main( int argc, char** argv )
             // Extract the square from the image
             cv::Mat square = dst(roi);
 
+			std::cin << currentCol
+
             // Do something with the square, for example display it
 			char name[80];
 			sprintf(name, "square%d-%d.bmp", currentRow, currentCol);
