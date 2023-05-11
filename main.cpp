@@ -77,7 +77,7 @@ int main( int argc, char** argv )
 
 	image.release();
 	
-	//imwrite("border.bmp", dst);
+	imwrite("border.bmp", dst);
 
 	// Define the size of the squares
     int squareSize = 200;
