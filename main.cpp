@@ -59,6 +59,7 @@ int main( int argc, char** argv )
     cv::Mat dst;
     cv::copyMakeBorder(image, dst, top, bottom, left, right, borderType, value);
 
+	//Освобождение памяти
 	image.release();
 	
 	imwrite("border.bmp", dst);
@@ -68,6 +69,7 @@ int main( int argc, char** argv )
 
 	int ir = dst.rows;
 	int cr = dst.cols;
+
 	// Loop over the rows and columns
     for (int currentRow = 0; currentRow < ir; currentRow += squareSize)
     {
@@ -99,8 +101,6 @@ int main( int argc, char** argv )
 				square.release();
 				std::cout << "удалось1" << currentRow << currentCol << std::endl;
 				continue;
-				//borderType = cv::BORDER_CONSTANT;
-				//cv::copyMakeBorder(dst, dst, 0, 0, 0, squareSize, borderType, value);
 			} else if (currentRow + squareSize > ir) {
 				cv::Rect roi(currentCol, currentRow, squareSize, ir - currentRow);
 				cv::Mat square = dst(roi);
@@ -112,18 +112,12 @@ int main( int argc, char** argv )
             	imwrite(name, square);
 				square.release();
 				continue;
-				//borderType = cv::BORDER_CONSTANT;
-				//cv::copyMakeBorder(dst, dst, 0, squareSize, 0, 0, borderType, value);
 			}
 			
-			// std::cout << i << j << rowSize << columnSize << std::endl;
-
             cv::Rect roi(currentCol, currentRow, squareSize, squareSize);
 
             // Extract the square from the image
             cv::Mat square = dst(roi);
-			//std::cout << "удалось3" << std::endl;
-			std::cout << currentRow << " " << currentCol << std::endl;
 
             // Do something with the square, for example display it
 			char name[80];
